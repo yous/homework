@@ -31,3 +31,11 @@ You can specify the TeX file that you want to build:
 ``` sh
 MAIN=homework make
 ```
+
+You can automatically trigger `make` with
+[watchdog](https://pypi.python.org/pypi/watchdog):
+
+``` sh
+pip install watchdog
+python watchdog.py
+```
