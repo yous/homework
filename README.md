@@ -8,12 +8,14 @@ Simple homework template based on LaTeX.
 
 ``` sh
 apt-get install texlive texlive-latex-extra
+pip install Pygments
 ```
 
 ### Arch Linux
 
 ``` sh
 pacman -S texlive-core texlive-latexextra
+pip install Pygments
 ```
 
 ## Build
