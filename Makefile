@@ -2,7 +2,7 @@ MAIN ?= homework
 TEMP := $(addsuffix .aux,$(MAIN)) $(addsuffix .log,$(MAIN))
 
 all: $(DEPS)
-	pdflatex -shell-escape $(MAIN)
+	pdflatex -shell-escape -interaction=nonstopmode $(MAIN)
 	rm -f $(TEMP)
 
 clean:
