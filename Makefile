@@ -1,5 +1,5 @@
 MAIN ?= homework
-TEMP := $(addsuffix .aux,$(MAIN)) $(addsuffix .log,$(MAIN))
+TEMP := $(addsuffix .log,$(MAIN))
 
 all: $(DEPS)
 	pdflatex -shell-escape -interaction=nonstopmode $(MAIN)
