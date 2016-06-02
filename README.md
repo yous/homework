@@ -18,24 +18,34 @@ pacman -S texlive-core texlive-latexextra
 pip install Pygments
 ```
 
-## Build
+## Commands
 
 Following command will build `homework.tex` and generate `homework.pdf`.
 
 ``` sh
-make
+latexmk
 ```
 
-You can specify the TeX file that you want to build:
+Run a file previewer with:
 
 ``` sh
-MAIN=homework make
+latexmk -pv
 ```
 
-You can automatically trigger `make` with
-[watchdog](https://pypi.python.org/pypi/watchdog):
+Run a file previewer and automatically update the output files:
 
 ``` sh
-pip install watchdog
-python watchdog.py
+latexmk -pvc
+```
+
+Clean up regeneratable files:
+
+``` sh
+latexmk -c
+```
+
+Clean up regeneratable files with the addition of output files:
+
+``` sh
+latexmk -C
 ```
