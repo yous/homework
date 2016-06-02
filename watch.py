@@ -1,3 +1,4 @@
+import os
 import sys
 import time
 import subprocess
@@ -5,7 +6,8 @@ from watchdog.observers import Observer
 from watchdog.events import PatternMatchingEventHandler
 
 class MyHandler(PatternMatchingEventHandler):
-    patterns = ['*.tex', 'code/*']
+    def __init__(self, patterns=None):
+        super(MyHandler, self).__init__(patterns=patterns)
 
     def process(self, event):
         """
@@ -32,7 +34,8 @@ class MyHandler(PatternMatchingEventHandler):
 if __name__ == '__main__':
     path = sys.argv[1] if len(sys.argv) > 1 else '.'
     observer = Observer()
-    observer.schedule(MyHandler(), path, recursive=True)
+    observer.schedule(MyHandler(['*.tex']), path)
+    observer.schedule(MyHandler(['*']), os.path.join(path, 'data'))
     observer.start()
 
     try:
