@@ -27,10 +27,10 @@
 # default, it will process all files in the current directory with the extension
 # .tex. (In general, it will process the files specified in the @default_files
 # variable.)
-@default_excluded_files = ()
+@default_excluded_files = ();
 
 # Default list of files to be proccessed.
-@default_files = ('*.tex')
+@default_files = ('*.tex');
 
 # 0: Do not generate a pdf version of the document.
 # 1: Generate a pdf version of the document using pdflatex.
