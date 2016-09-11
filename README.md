@@ -7,7 +7,7 @@ Simple homework template based on LaTeX.
 ### Ubuntu
 
 ``` sh
-apt-get install texlive texlive-latex-extra
+apt-get install texlive texlive-latex-extra latexmk
 pip install Pygments
 ```
 
