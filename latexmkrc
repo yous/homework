@@ -53,6 +53,15 @@ if ($^O eq 'darwin') {
         $pdf_previewer = "open -a $viewer %O %S";
     }
 }
+elsif ($^O eq 'MSWin32') {
+    my $viewer = 'SumatraPDF.exe';
+    for my $path (split /;/, $ENV{PATH}) {
+        if (-f "$path/$viewer" && -x _) {
+            $pdf_previewer = "$viewer %O %S";
+            last;
+        }
+    }
+}
 
 # Whether to use the -recorder option to latex and pdflatex. Use of this option
 # results in a file of extension .fls containing a list of the files that these
