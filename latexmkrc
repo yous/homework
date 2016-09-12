@@ -48,7 +48,10 @@ $pdflatex = 'pdflatex -shell-escape -interaction=nonstopmode %O %S';
 
 # The command to invoke a pdf-previewer.
 if ($^O eq 'darwin') {
-  $pdf_previewer = 'open -a Skim %O %S';
+    my $viewer = 'Skim';
+    if (-d "/Applications/$viewer.app") {
+        $pdf_previewer = "open -a $viewer %O %S";
+    }
 }
 
 # Whether to use the -recorder option to latex and pdflatex. Use of this option
